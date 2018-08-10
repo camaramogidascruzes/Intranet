@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CMMC - @ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2018.2.620/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2018.2.620/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2018.2.620/kendo.black.min.css")" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="@Url.Content("~/img/favicon.ico")">
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    <div class="page">
+        <!-- Main Navbar-->
+        <header class="header">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <!-- Navbar Header-->
+                        <div class="navbar-header">
+                            <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                                <div class="brand-text d-none d-lg-inline-block"><img src="@Url.Content("~/img/brasao64x64.png")" alt="" class="img-fluid brand-image">Câmara Municipal de Mogi das Cruzes</div>
+                                <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>CMMC</strong></div>
+                            </a>
+
+                        </div>
+                        <!-- Navbar Menu -->
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                            <li class="nav-item dropdown">
+                                <a id="usuario" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
+                                    <span class="d-none d-sm-inline-block">Fernando da Silva Komura</span><i class="fa fa-user user-image"></i>
+                                </a>
+                                <ul aria-labelledby="usuario" class="dropdown-menu">
+                                    <li><a rel="nofollow" href="#" class="dropdown-item"> Alterar senha </a> </li>
+                                    <li><a rel="nofollow" href="#" class="dropdown-item"> Logout </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content d-flex align-items-stretch">
+            @Html.Partial("_PartialPage_MenuNavegacao")
+
+            <div class="content-inner">
+                <!-- Page Header-->
+                <header class="page-header">
+                    <div class="container-fluid">
+                        <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"></a>
+                        <span class="no-margin-bottom page-title">Dashboard</span>
+                    </div>
+                </header>
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+                <footer class="main-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="@Url.Content("~/Scripts/kendo/2018.2.620/jszip.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2018.2.620/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo/2018.2.620/kendo.aspnetmvc.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/kendo.modernizr.custom.js")"></script>
+    <script src="@Url.Content("~/Scripts/umd/popper.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/front.js")"></script>
+</body>
+</html>
