@@ -60,10 +60,29 @@
     <Compile Include="Entities\Geral\TipoEmpresa.cs" />
     <Compile Include="Entities\Geral\TipoTelefoneEnum.cs" />
     <Compile Include="Entities\Geral\Usuario.cs" />
+    <Compile Include="Entities\Transporte\Abastecimento.cs" />
+    <Compile Include="Entities\Transporte\ContaCombustivel.cs" />
+    <Compile Include="Entities\Transporte\ContaCombustivelMovimentacao.cs" />
+    <Compile Include="Entities\Transporte\ContaCombustivelQuota.cs" />
+    <Compile Include="Entities\Transporte\ContratoSeguro.cs" />
+    <Compile Include="Entities\Transporte\ControleDiario.cs" />
+    <Compile Include="Entities\Transporte\ControleDiarioDiariaForaMunicipio.cs" />
+    <Compile Include="Entities\Transporte\ControleDiarioItinerarioForaMunicipio.cs" />
+    <Compile Include="Entities\Transporte\ControleDiarioPedagio.cs" />
+    <Compile Include="Entities\Transporte\ControleDiarioVeiculosUtilizados.cs" />
+    <Compile Include="Entities\Transporte\ItensManutencaoOS.cs" />
+    <Compile Include="Entities\Transporte\ManutencaoOS.cs" />
+    <Compile Include="Entities\Transporte\Motorista.cs" />
+    <Compile Include="Entities\Transporte\TipoCombustivel.cs" />
+    <Compile Include="Entities\Transporte\Veiculo.cs" />
     <Compile Include="Interfaces\IBasicEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\Cerimonial\" />
+    <Folder Include="Entities\Portaria\" />
+    <Folder Include="Entities\RedeSemFio\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
