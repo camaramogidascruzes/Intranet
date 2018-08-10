@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intranet.Domain", "Intranet.Domain\Intranet.Domain.csproj", "{001A89F7-A824-43D5-8025-F4F985151F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intranet.UI.Web", "Intranet.UI.Web\Intranet.UI.Web.csproj", "{1C557C5B-4F5D-4B2A-BB54-A327117F328B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{001A89F7-A824-43D5-8025-F4F985151F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001A89F7-A824-43D5-8025-F4F985151F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001A89F7-A824-43D5-8025-F4F985151F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001A89F7-A824-43D5-8025-F4F985151F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C557C5B-4F5D-4B2A-BB54-A327117F328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C557C5B-4F5D-4B2A-BB54-A327117F328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C557C5B-4F5D-4B2A-BB54-A327117F328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C557C5B-4F5D-4B2A-BB54-A327117F328B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
