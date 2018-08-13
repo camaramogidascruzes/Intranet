@@ -2732,6 +2732,16 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intranet.Application\Intranet.Application.csproj">
+      <Project>{267b375d-936c-4703-ba75-f6da34aa8d27}</Project>
+      <Name>Intranet.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intranet.Domain\Intranet.Domain.csproj">
+      <Project>{001a89f7-a824-43d5-8025-f4f985151f3c}</Project>
+      <Name>Intranet.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

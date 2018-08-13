@@ -2,7 +2,7 @@
 
 
 using System.Collections.Generic;
-using Intranet.Model.Entities.RedeSemFio;
+using Intranet.Domain.Entities.RedeSemFio;
 
 namespace Intranet.Domain.Entities.Geral
 {
