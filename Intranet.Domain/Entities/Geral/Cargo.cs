@@ -6,11 +6,11 @@ namespace Intranet.Domain.Entities.Geral
     {
         public Cargo()
         {
-            funcionarios = new List<Ocupacao>();
+            Funcionarios = new List<Ocupacao>();
         }
 
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
-        public ICollection<Ocupacao> funcionarios { get; set; }
+        public ICollection<Ocupacao> Funcionarios { get; set; }
     }
 }

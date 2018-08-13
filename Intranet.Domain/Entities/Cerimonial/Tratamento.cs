@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace Intranet.Model.Entities.Cerimonial
+namespace Intranet.Domain.Entities.Cerimonial
 {
     public class Tratamento : CriacaoAlteracaoBasicEntity
     {
-        public string abreviacao { get; set; }
-        public string extenso { get; set; }
+        public string Abreviacao { get; set; }
+        public string Extenso { get; set; }
 
-        public ICollection<Autoridade> autoridades { get; set; }
+        public ICollection<Autoridade> Autoridades { get; set; }
     }
 }

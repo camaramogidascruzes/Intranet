@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
 
-namespace Intranet.Model.Entities.Cerimonial
+namespace Intranet.Domain.Entities.Cerimonial
 {
     public class Orgao : CriacaoAlteracaoBasicEntity
     {
-        public string nome { get; set; }
-        public string cep { get; set; }
-        public string logradouro { get; set; }
-        public string numero { get; set; }
-        public string complemento { get; set; }
-        public string bairro { get; set; }
-        public string cidade { get; set; }
-        public string uf { get; set; }
-        public string observacao { get; set; }
+        public Orgao()
+        {
+            Autoridades = new List<Autoridade>();
+        }
 
-        public ICollection<Autoridade> autoridades { get; set; }
+        public string Nome { get; set; }
+        public InformacaoEndereco Endereco { get; set; }
+        public string Observacao { get; set; }
+
+        public ICollection<Autoridade> Autoridades { get; set; }
     }
 }

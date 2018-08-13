@@ -8,11 +8,17 @@ namespace Intranet.Domain.Entities.Geral
 {
     public class Grupo : CriacaoAlteracaoBasicEntity
     {
-        public string nome { get; set; }
-        public bool bloqueado { get; set; }
+        public Grupo()
+        {
+            Usuarios = new List<Usuario>();
+        }
 
-        public ICollection<Usuario> usuarios { get; set; }
-        public int idCategoriaRedeSemFio { get; set; }
-        public CategoriaUsuarioRedeSemFio categoriaRedeSemFio { get; set; }
+        public string Nome { get; set; }
+        public bool Bloqueado { get; set; }
+
+        public ICollection<Usuario> Usuarios { get; set; }
+
+        public int IdCategoriaRedeSemFio { get; set; }
+        public CategoriaUsuarioRedeSemFio CategoriaRedeSemFio { get; set; }
     }
 }

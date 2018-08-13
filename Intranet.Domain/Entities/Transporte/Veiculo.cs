@@ -1,29 +1,28 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using Intranet.Model.Entities.Geral;
 
-namespace Intranet.Model.Entities.Transporte
+using Intranet.Domain.Entities.Geral;
+
+namespace Intranet.Domain.Entities.Transporte
 {
     public class Veiculo : CriacaoAlteracaoBasicEntity
     {
-        public string modelo { get; set; }
-        public string placa { get; set; }
-        public string cor { get; set; }
-        public int anoFabricao { get; set; }
-        public int anoModelo { get; set; }
-        public string chassi { get; set; }
-        public string renavam { get; set; }
-        public string numeroMotor { get; set; }
-        public string observacao { get; set; }
+        public string Modelo { get; set; }
+        public string Placa { get; set; }
+        public string Cor { get; set; }
+        public int AnoFabricao { get; set; }
+        public int AnoModelo { get; set; }
+        public string Chassi { get; set; }
+        public string Renavam { get; set; }
+        public string NumeroMotor { get; set; }
+        public string Observacao { get; set; }
 
-        public int idEmpresaCompra { get; set; }
-        public virtual Empresa empresaCompra { get; set; }
+        public int IdEmpresaCompra { get; set; }
+        public virtual Empresa EmpresaCompra { get; set; }
 
-        public int numeroPatrimonio { get; set; }
-        public virtual Patrimonio patrimonio { get; set; }
+        public int NumeroPatrimonio { get; set; }
+        public virtual Patrimonio Patrimonio { get; set; }
 
-        public int idContratoSeguro { get; set; }
-        public ContratoSeguro seguro { get; set; }
+        public int IdContratoSeguro { get; set; }
+        public ContratoSeguro Seguro { get; set; }
     }
 }

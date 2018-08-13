@@ -41,35 +41,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BasicEntity.cs" />
+    <Compile Include="Entities\Cerimonial\Autoridade.cs" />
+    <Compile Include="Entities\Cerimonial\AutoridadeGrupoCerimonial.cs" />
+    <Compile Include="Entities\Cerimonial\GrupoCerimonial.cs" />
+    <Compile Include="Entities\Cerimonial\Orgao.cs" />
+    <Compile Include="Entities\Cerimonial\Tratamento.cs" />
     <Compile Include="Entities\CriacaoAlteracaoBasicEntity.cs" />
     <Compile Include="Entities\CriacaoBasicEntity.cs" />
     <Compile Include="Entities\DadosAlteracaoRegistro.cs" />
     <Compile Include="Entities\DadosCriacaoRegistro.cs" />
     <Compile Include="Entities\Geral\Cargo.cs" />
-    <Compile Include="Entities\Geral\FuncionarioContato.cs" />
     <Compile Include="Entities\Geral\Empresa.cs" />
-    <Compile Include="Entities\Geral\EmpresaContato.cs" />
-    <Compile Include="Entities\Geral\EmpresasTipos.cs" />
     <Compile Include="Entities\Geral\Funcionario.cs" />
     <Compile Include="Entities\Geral\Grupo.cs" />
-    <Compile Include="Entities\Geral\Ocupacao.cs" />
     <Compile Include="Entities\Geral\Parlamentar.cs" />
     <Compile Include="Entities\Geral\Patrimonio.cs" />
     <Compile Include="Entities\Geral\Setor.cs" />
-    <Compile Include="Entities\Geral\TipoDocumentoEnum.cs" />
-    <Compile Include="Entities\Geral\TipoEmpresa.cs" />
-    <Compile Include="Entities\Geral\TipoTelefoneEnum.cs" />
+    <Compile Include="Entities\Enum\TipoDocumentoEnum.cs" />
+    <Compile Include="Entities\Enum\TipoTelefoneEnum.cs" />
     <Compile Include="Entities\Geral\Usuario.cs" />
-    <Compile Include="Entities\Transporte\Abastecimento.cs" />
+    <Compile Include="Entities\InformacaoDocumento.cs" />
+    <Compile Include="Entities\InformacaoEndereco.cs" />
+    <Compile Include="Entities\InformacaoTelefone.cs" />
+    <Compile Include="Entities\Portaria\LocalDestino.cs" />
+    <Compile Include="Entities\Portaria\RegistroEntrada.cs" />
+    <Compile Include="Entities\RedeSemFio\CategoriaUsuarioRedeSemFio.cs" />
+    <Compile Include="Entities\RedeSemFio\CodigoAcessoRedeSemFio.cs" />
+    <Compile Include="Entities\RedeSemFio\UsuarioRedeSemFio.cs" />
     <Compile Include="Entities\Transporte\ContaCombustivel.cs" />
-    <Compile Include="Entities\Transporte\ContaCombustivelMovimentacao.cs" />
-    <Compile Include="Entities\Transporte\ContaCombustivelQuota.cs" />
     <Compile Include="Entities\Transporte\ContratoSeguro.cs" />
     <Compile Include="Entities\Transporte\ControleDiario.cs" />
-    <Compile Include="Entities\Transporte\ControleDiarioDiariaForaMunicipio.cs" />
-    <Compile Include="Entities\Transporte\ControleDiarioItinerarioForaMunicipio.cs" />
-    <Compile Include="Entities\Transporte\ControleDiarioPedagio.cs" />
-    <Compile Include="Entities\Transporte\ControleDiarioVeiculosUtilizados.cs" />
     <Compile Include="Entities\Transporte\ItensManutencaoOS.cs" />
     <Compile Include="Entities\Transporte\ManutencaoOS.cs" />
     <Compile Include="Entities\Transporte\Motorista.cs" />
@@ -78,11 +79,7 @@
     <Compile Include="Interfaces\IBasicEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\Cerimonial\" />
-    <Folder Include="Entities\Portaria\" />
-    <Folder Include="Entities\RedeSemFio\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

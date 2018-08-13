@@ -1,5 +1,5 @@
 ﻿
-namespace Intranet.Domain.Entities.Geral
+namespace Intranet.Domain.Entities.Enum
 {
     public enum TipoTelefone
     {

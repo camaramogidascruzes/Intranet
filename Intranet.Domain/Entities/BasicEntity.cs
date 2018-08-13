@@ -4,6 +4,6 @@ namespace Intranet.Domain.Entities
 {
     public class BasicEntity : IBasicEntity
     {
-        public int id { get; set; }
+        public int Id { get; set; }
     }
 }

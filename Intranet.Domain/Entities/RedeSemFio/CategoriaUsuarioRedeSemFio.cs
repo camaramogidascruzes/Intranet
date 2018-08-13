@@ -1,15 +1,21 @@
 ﻿
 using System.Collections.Generic;
-using Intranet.Model.Entities.Geral;
+using Intranet.Domain.Entities.Geral;
 
-namespace Intranet.Model.Entities.RedeSemFio
+namespace Intranet.Domain.Entities.RedeSemFio
 {
     public class CategoriaUsuarioRedeSemFio : CriacaoAlteracaoBasicEntity
     {
-        public string nome { get; set; }
-        public int validade { get; set; }
-        public int quota { get; set; }
+        public CategoriaUsuarioRedeSemFio()
+        {
+            Grupos = new List<Grupo>();
+        }
 
-        public ICollection<Grupo> grupos { get; set; }
+        public string Nome { get; set; }
+        public int Validade { get; set; }
+        public int Quota { get; set; }
+
+        public ICollection<Grupo> Grupos { get; set; }
     }
+
 }

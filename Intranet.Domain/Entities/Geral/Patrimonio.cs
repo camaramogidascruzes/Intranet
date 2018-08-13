@@ -1,14 +1,13 @@
-﻿
-using System;
+﻿using System;
 
 namespace Intranet.Domain.Entities.Geral
 {
     public class Patrimonio : CriacaoAlteracaoBasicEntity
     {
-        public int numero { get; set; }
-        public DateTime dataAquisicao { get; set; }
-        public string numeroProcessoAquisicao { get; set; }
-        public DateTime dataLimiteGarantia { get; set; }
-        public string observacao { get; set; }
+        public int Numero { get; set; }
+        public DateTime? DataAquisicao { get; set; }
+        public string NumeroProcessoAquisicao { get; set; }
+        public DateTime? DataLimiteGarantia { get; set; }
+        public string Observacao { get; set; }
     }
 }

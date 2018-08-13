@@ -1,16 +1,18 @@
-﻿using System;
-using Intranet.Model.Entities.Geral;
+﻿using Intranet.Domain.Entities.Geral;
+using System;
 
-namespace Intranet.Model.Entities.Transporte
+
+namespace Intranet.Domain.Entities.Transporte
 {
     public class Motorista : CriacaoAlteracaoBasicEntity
     {
-        public string carteiraMotoristaNumero { get; set; }
-        public DateTime carteiraMotoristaDataValidade { get; set; }
+        public string CarteiraMotoristaNumero { get; set; }
+        public DateTime CarteiraMotoristaDataValidade { get; set; }
 
-        public int idFuncionario { get; set; }
-        public Funcionario funcionario { get; set; }
-        public int idSetor { get; set; }
-        public Setor setorDesignado { get; set; }
+        public int IdFuncionario { get; set; }
+        public Funcionario Funcionario { get; set; }
+
+        public int IdSetor { get; set; }
+        public Setor SetorDesignado { get; set; }
     }
 }

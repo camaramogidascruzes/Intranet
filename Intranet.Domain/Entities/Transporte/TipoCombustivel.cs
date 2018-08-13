@@ -1,4 +1,4 @@
-﻿namespace Intranet.Model.Entities.Transporte
+﻿namespace Intranet.Domain.Entities.Transporte
 {
     public class TipoCombustivel : CriacaoAlteracaoBasicEntity
     {

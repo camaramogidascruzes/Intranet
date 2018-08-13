@@ -1,19 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using Intranet.Model.Entities.Geral;
+using Intranet.Domain.Entities.Geral;
 
-namespace Intranet.Model.Entities.Transporte
+namespace Intranet.Domain.Entities.Transporte
 {
     public class ContratoSeguro : CriacaoAlteracaoBasicEntity
     {
-        public int idEmpresa { get; set; }
-        public Empresa empresa { get; set; }
-        public string numeroApolice { get; set; }
-        public DateTime dataInicio { get; set; }
-        public DateTime dataTermino { get; set; }
-        public Decimal valorFranquia { get; set; }
-        public string observacao { get; set; }
+        public ContratoSeguro()
+        {
+            VeiculosCobertos = new List<Veiculo>();
+        }
 
-        public ICollection<Veiculo> veiculosCobertos { get; set; }
+
+        public int IdEmpresa { get; set; }
+        public Empresa Empresa { get; set; }
+
+        public string NumeroApolice { get; set; }
+        public DateTime DataInicio { get; set; }
+        public DateTime DataTermino { get; set; }
+        public Decimal ValorFranquia { get; set; }
+        public string Observacao { get; set; }
+
+        public ICollection<Veiculo> VeiculosCobertos { get; set; }
     }
 }

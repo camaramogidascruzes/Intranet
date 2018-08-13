@@ -1,11 +1,16 @@
 ﻿using System.Collections.Generic;
 
-namespace Intranet.Model.Entities.Cerimonial
+namespace Intranet.Domain.Entities.Cerimonial
 {
     public class GrupoCerimonial : CriacaoAlteracaoBasicEntity
     {
-        public string nome { get; set; }
+        public GrupoCerimonial()
+        {
+            Autoridades = new List<AutoridadeGrupoCerimonial>();
+        }
 
-        public virtual ICollection<Autoridade> autoridades { get; set; }
+        public string Nome { get; set; }
+
+        public ICollection<AutoridadeGrupoCerimonial> Autoridades { get; set; }
     }
 }

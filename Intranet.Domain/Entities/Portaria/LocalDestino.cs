@@ -2,16 +2,27 @@
 using System;
 using System.Collections.Generic;
 
-namespace Intranet.Model.Entities.Portaria
+namespace Intranet.Domain.Entities.Portaria
 {
+    public enum CategoriaLocalDestino
+    {
+        GABINETE = 1,
+        ADMINISTRATIVO = 2
+    }
+
     public class LocalDestino: CriacaoAlteracaoBasicEntity
     {
-        public string nome { get; set; }
-        public string atalho { get; set; }
-        public CategoriaLocalDestino categoria { get; set; }
-        public int? sala { get; set; }
-        public DateTime dataVencimento { get; set; }
+        public LocalDestino()
+        {
+            Entradas = new List<RegistroEntrada>();
+        }
 
-        public virtual ICollection<RegistroEntrada> entradas { get; set; }
+        public string Nome { get; set; }
+        public string Atalho { get; set; }
+        public CategoriaLocalDestino Categoria { get; set; }
+        public int? Sala { get; set; }
+        public DateTime DataVencimento { get; set; }
+
+        public ICollection<RegistroEntrada> Entradas { get; set; }
     }
 }

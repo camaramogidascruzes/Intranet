@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Intranet.Model.Entities.Portaria
+namespace Intranet.Domain.Entities.Portaria
 {
     public class RegistroEntrada : BasicEntity
     {
-        public int idLocalDestino { get; set; }
-        public virtual LocalDestino localDestino { get; set; }
+        public int IdLocalDestino { get; set; }
+        public LocalDestino LocalDestino { get; set; }
 
-        public DateTime dataHoraRegistro { get; set; }
+        public DateTime DataHoraRegistro { get; set; }
     }
 }
