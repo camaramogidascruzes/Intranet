@@ -4,6 +4,12 @@ namespace Intranet.Domain.Entities.Geral
 {
     public class Patrimonio : CriacaoAlteracaoBasicEntity
     {
+        public Patrimonio()
+        {
+            DataAquisicao = DateTime.MinValue;
+            DataLimiteGarantia = DateTime.MinValue;
+        }
+
         public int Numero { get; set; }
         public DateTime? DataAquisicao { get; set; }
         public string NumeroProcessoAquisicao { get; set; }

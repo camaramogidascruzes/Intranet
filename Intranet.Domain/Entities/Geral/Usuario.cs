@@ -8,7 +8,9 @@ namespace Intranet.Domain.Entities.Geral
     {
         public Usuario()
         {
-            Grupos = new List<Grupo>();
+            DataUltimoLogin = DateTime.MinValue;
+            TerminoBloqueio = DateTime.MinValue;
+            Grupos = new List<UsuarioGrupo>();
         }
 
         public string Login { get; set; }
@@ -21,7 +23,26 @@ namespace Intranet.Domain.Entities.Geral
         public string Ip { get; set; }
         public bool NecessarioAlterarSenha { get; set; }
 
-        public ICollection<Grupo> Grupos { get; set; }
+        public ICollection<UsuarioGrupo> Grupos { get; set; }
         
+    }
+
+
+    public class UsuarioGrupo
+    {
+        public UsuarioGrupo()
+        {
+            Usuario = new Usuario();
+            Grupo = new Grupo();
+            DadosCriacaoRegistro = new DadosCriacaoRegistro();
+        }
+
+        public int IdUsuario { get; set; }
+        public Usuario Usuario { get; set; }
+
+        public int IdGrupo { get; set; }
+        public Grupo Grupo { get; set; }
+
+        public DadosCriacaoRegistro DadosCriacaoRegistro { get; set; }
     }
 }

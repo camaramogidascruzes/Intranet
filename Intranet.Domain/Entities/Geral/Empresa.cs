@@ -8,6 +8,8 @@ namespace Intranet.Domain.Entities.Geral
     {
         public Empresa()
         {
+            DocumentoCpfCnpjTipo = TipoDocumento.CPF;
+            Endereco = new InformacaoEndereco();
             Contatos = new List<EmpresaContato>();
             Tipos = new List<EmpresasTipos>();
         }
@@ -24,6 +26,12 @@ namespace Intranet.Domain.Entities.Geral
 
     public class EmpresaContato : CriacaoAlteracaoBasicEntity
     {
+        public EmpresaContato()
+        {
+            Telefone = new InformacaoTelefone();
+            Empresa = new Empresa();
+        }
+
         public string Nome { get; set; }
         public InformacaoTelefone Telefone { get; set; }
 
@@ -33,6 +41,13 @@ namespace Intranet.Domain.Entities.Geral
 
     public class EmpresasTipos
     {
+        public EmpresasTipos()
+        {
+            Empresa = new Empresa();
+            TipoEmpresa = new TipoEmpresa();
+            DadosCriacaoRegistro = new DadosCriacaoRegistro();
+        }
+
         public int IdEmpresa { get; set; }
         public Empresa Empresa { get; set; }
 
@@ -50,9 +65,9 @@ namespace Intranet.Domain.Entities.Geral
         }
 
         public string Nome { get; set; }
-
-        public int IdEmpresa { get; set; }
+        
         public ICollection<EmpresasTipos> Empresas { get; set; }
     }
+
 
 }

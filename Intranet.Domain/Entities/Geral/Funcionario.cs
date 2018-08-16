@@ -6,6 +6,16 @@ namespace Intranet.Domain.Entities.Geral
 {
     public class Funcionario : CriacaoAlteracaoBasicEntity
     {
+        public Funcionario()
+        {
+            Documento = new InformacaoDocumento();
+            Nascimento = DateTime.MinValue;
+            Setor = new Setor();
+            Cargos = new List<Ocupacao>();
+            Contatos = new List<FuncionarioContato>();
+
+        }
+
         public string Nome { get; set; }
         public InformacaoDocumento Documento { get; set; }
         public DateTime? Nascimento { get; set; }
@@ -18,6 +28,12 @@ namespace Intranet.Domain.Entities.Geral
 
     public class FuncionarioContato : CriacaoAlteracaoBasicEntity
     {
+        public FuncionarioContato()
+        {
+            Telefone = new InformacaoTelefone();
+            Funcionario = new Funcionario();
+        }
+
         public InformacaoTelefone Telefone { get; set; }
 
         public int IdFuncionario { get; set; }
@@ -26,6 +42,14 @@ namespace Intranet.Domain.Entities.Geral
 
     public class Ocupacao
     {
+        public Ocupacao()
+        {
+            Funcionario = new Funcionario();
+            Cargo = new Cargo();
+            DadosAlteracaoRegistro = new DadosAlteracaoRegistro();
+            DadosAlteracaoRegistro = new DadosAlteracaoRegistro();
+        }
+
         public int Idfuncionario { get; set; }
         public Funcionario Funcionario { get; set; }
 

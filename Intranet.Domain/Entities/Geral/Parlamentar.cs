@@ -3,6 +3,11 @@ namespace Intranet.Domain.Entities.Geral
 {
     public class Parlamentar : CriacaoAlteracaoBasicEntity
     {
+        public Parlamentar()
+        {
+            Setor = new Setor();
+        }
+
         public string Nome { get; set; }
         public string NomeCompleto { get; set; }
 
