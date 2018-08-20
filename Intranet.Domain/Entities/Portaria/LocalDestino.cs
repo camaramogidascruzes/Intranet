@@ -15,6 +15,7 @@ namespace Intranet.Domain.Entities.Portaria
         public LocalDestino()
         {
             Entradas = new List<RegistroEntrada>();
+            DataVencimento = DateTime.MinValue;
         }
 
         public string Nome { get; set; }

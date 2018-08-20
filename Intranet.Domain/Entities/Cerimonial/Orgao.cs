@@ -7,6 +7,7 @@ namespace Intranet.Domain.Entities.Cerimonial
         public Orgao()
         {
             Autoridades = new List<Autoridade>();
+            Endereco = new InformacaoEndereco();
         }
 
         public string Nome { get; set; }

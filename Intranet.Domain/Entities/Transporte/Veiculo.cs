@@ -6,6 +6,14 @@ namespace Intranet.Domain.Entities.Transporte
 {
     public class Veiculo : CriacaoAlteracaoBasicEntity
     {
+        public Veiculo()
+        {
+            EmpresaCompra = new Empresa();
+            Patrimonio = new Patrimonio();
+            Seguro = new ContratoSeguro();
+        }
+
+
         public string Modelo { get; set; }
         public string Placa { get; set; }
         public string Cor { get; set; }
@@ -17,10 +25,10 @@ namespace Intranet.Domain.Entities.Transporte
         public string Observacao { get; set; }
 
         public int IdEmpresaCompra { get; set; }
-        public virtual Empresa EmpresaCompra { get; set; }
+        public Empresa EmpresaCompra { get; set; }
 
-        public int NumeroPatrimonio { get; set; }
-        public virtual Patrimonio Patrimonio { get; set; }
+        public int IdPatrimonio { get; set; }
+        public Patrimonio Patrimonio { get; set; }
 
         public int IdContratoSeguro { get; set; }
         public ContratoSeguro Seguro { get; set; }

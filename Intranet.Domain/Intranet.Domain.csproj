@@ -71,7 +71,6 @@
     <Compile Include="Entities\Transporte\ContaCombustivel.cs" />
     <Compile Include="Entities\Transporte\ContratoSeguro.cs" />
     <Compile Include="Entities\Transporte\ControleDiario.cs" />
-    <Compile Include="Entities\Transporte\ItensManutencaoOS.cs" />
     <Compile Include="Entities\Transporte\ManutencaoOS.cs" />
     <Compile Include="Entities\Transporte\Motorista.cs" />
     <Compile Include="Entities\Transporte\TipoCombustivel.cs" />

@@ -8,6 +8,10 @@ namespace Intranet.Domain.Entities.Transporte
     {
         public ManutencaoOS()
         {
+            DataNF = DateTime.MinValue;
+            DataEntrada = DateTime.MinValue;
+            DataEntrega = DateTime.MinValue;
+            DataLimiteGarantia = DateTime.MinValue;
             Itens = new List<ItensManutencaoOS>();
         }
 
@@ -25,7 +29,7 @@ namespace Intranet.Domain.Entities.Transporte
         public int IdVeiculo { get; set; }
         public Veiculo Veiculo { get; set; }
 
-        public int IdEmpresa { get; set; }
+        public int? IdEmpresa { get; set; }
         public Empresa Empresa { get; set; }
 
         public ICollection<ItensManutencaoOS> Itens { get; set; }

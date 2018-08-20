@@ -2,9 +2,11 @@
 using System.Data.Entity.ModelConfiguration.Conventions;
 using Intranet.Data.EntityConfiguration;
 using Intranet.Data.EntityConfiguration.Geral;
-using Intranet.Data.EntityConfiguration.RedeSemFio;
+using Intranet.Data.EntityConfigurations.RedeSemFio;
 using Intranet.Domain.Entities;
 using Intranet.Domain.Entities.Geral;
+using Intranet.Domain.Entities.RedeSemFio;
+using GrupoConfiguration = Intranet.Data.EntityConfiguration.Geral.GrupoConfiguration;
 
 namespace Intranet.Data.Context
 {
@@ -18,18 +20,26 @@ namespace Intranet.Data.Context
         }
 
         public DbSet<Cargo> Cargos { get; set; }
-        public DbSet<Setor> Setores { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<EmpresaContato> EmpresaContatos { get; set; }
+        public DbSet<EmpresasTipos> EmpresasTipos { get; set; }
         public DbSet<TipoEmpresa> TiposEmpresa { get; set; }
         public DbSet<Funcionario> Funcionarios { get; set; }
-        public DbSet<Parlamentar> Parlamentares { get; set; }
+        public DbSet<FuncionarioContato> FuncionarioContatos { get; set; }
+        public DbSet<Ocupacao> Ocupacoes { get; set; }
         public DbSet<Grupo> Grupos { get; set; }
+        public DbSet<CategoriaUsuarioRedeSemFio> CategoriasUsuarioRedeSemFio { get; set; }
+        public DbSet<Parlamentar> Parlamentares { get; set; }
         public DbSet<Patrimonio> Patrimonios { get; set; }
+        public DbSet<Setor> Setores { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<UsuarioGrupo> UsuariosGrupos { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("intranet");
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
@@ -39,6 +49,7 @@ namespace Intranet.Data.Context
             modelBuilder.Configurations.Add(new InformacaoEnderecoConfiguration());
             modelBuilder.Configurations.Add(new InformacaoDocumentoConfiguration());
             modelBuilder.Configurations.Add(new InformacaoTelefoneConfiguration());
+
 
             modelBuilder.ComplexType<DadosAlteracaoRegistro>();
             modelBuilder.ComplexType<DadosCriacaoRegistro>();

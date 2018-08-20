@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intranet.Data\Intranet.Data.csproj">
-      <Project>{cb75719b-24f8-47dd-8523-90e52d06fc73}</Project>
+      <Project>{707d5964-dcfa-4bfa-a329-36258bd13ee2}</Project>
       <Name>Intranet.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Intranet.Domain\Intranet.Domain.csproj">

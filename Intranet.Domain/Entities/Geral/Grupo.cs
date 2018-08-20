@@ -19,7 +19,7 @@ namespace Intranet.Domain.Entities.Geral
 
         public ICollection<UsuarioGrupo> Usuarios { get; set; }
 
-        public int IdCategoriaRedeSemFio { get; set; }
+        public int? IdCategoriaRedeSemFio { get; set; }
         public CategoriaUsuarioRedeSemFio CategoriaRedeSemFio { get; set; }
     }
 }

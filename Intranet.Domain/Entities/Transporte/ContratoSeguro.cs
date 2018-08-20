@@ -8,6 +8,9 @@ namespace Intranet.Domain.Entities.Transporte
     {
         public ContratoSeguro()
         {
+            Empresa = new Empresa();
+            DataInicio = DateTime.MinValue;
+            DataTermino = DateTime.MinValue;
             VeiculosCobertos = new List<Veiculo>();
         }
 
@@ -18,7 +21,7 @@ namespace Intranet.Domain.Entities.Transporte
         public string NumeroApolice { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataTermino { get; set; }
-        public Decimal ValorFranquia { get; set; }
+        public decimal ValorFranquia { get; set; }
         public string Observacao { get; set; }
 
         public ICollection<Veiculo> VeiculosCobertos { get; set; }

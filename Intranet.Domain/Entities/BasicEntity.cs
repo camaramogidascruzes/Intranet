@@ -2,7 +2,7 @@
 
 namespace Intranet.Domain.Entities
 {
-    public class BasicEntity : IBasicEntity
+    public class BasicEntity
     {
         public int Id { get; set; }
     }

@@ -8,6 +8,9 @@ namespace Intranet.Domain.Entities.Cerimonial
         public Autoridade()
         {
             Grupos = new List<AutoridadeGrupoCerimonial>();
+            Endereco = new InformacaoEndereco();
+            Tratamento = new Tratamento();
+            Orgao = new Orgao();
         }
 
         public string Nome { get; set; }
@@ -15,10 +18,10 @@ namespace Intranet.Domain.Entities.Cerimonial
         public string Cargo { get; set; }
         public string Observacao { get; set; }
 
-        public int IdTratamento { get; set; }
+        public int? IdTratamento { get; set; }
         public Tratamento Tratamento { get; set; }
 
-        public int IdOrgao { get; set; }
+        public int? IdOrgao { get; set; }
         public Orgao Orgao { get; set; }
 
         public ICollection<AutoridadeGrupoCerimonial> Grupos { get; set; }        

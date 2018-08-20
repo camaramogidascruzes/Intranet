@@ -8,6 +8,7 @@ namespace Intranet.Domain.Entities.Transporte
     {
         public ControleDiario()
         {
+            Data = DateTime.MinValue;
             VeiculosUtilizados = new List<ControleDiarioVeiculosUtilizados>();
             Pedagios = new List<ControleDiarioPedagio>();
             Abastecimentos = new List<Abastecimento>();
@@ -23,9 +24,9 @@ namespace Intranet.Domain.Entities.Transporte
 
         public int IdMotorista { get; set; }
         public Motorista Motorista { get; set; }
-        public int IdFuncionarioRequisitante { get; set; }
+        public int? IdFuncionarioRequisitante { get; set; }
         public Funcionario FuncionarioRequisitante { get; set; }
-        public int IdParlamentarRequisitante { get; set; }
+        public int? IdParlamentarRequisitante { get; set; }
         public Parlamentar ParlamentarRequisitante { get; set; }
 
 
@@ -37,6 +38,12 @@ namespace Intranet.Domain.Entities.Transporte
 
     public class ControleDiarioVeiculosUtilizados : BasicEntity
     {
+        public ControleDiarioVeiculosUtilizados()
+        {
+            Saida = DateTime.MinValue;
+            Retorno = DateTime.MinValue;
+        }
+
         public DateTime Saida { get; set; }
         public DateTime Retorno { get; set; }
         public decimal OdometroSaida { get; set; }
@@ -51,6 +58,11 @@ namespace Intranet.Domain.Entities.Transporte
 
     public class ControleDiarioPedagio : BasicEntity
     {
+        public ControleDiarioPedagio()
+        {
+            Data = DateTime.MinValue;
+        }
+
         public string Local { get; set; }
         public string Numero { get; set; }
         public DateTime Data { get; set; }
@@ -87,6 +99,8 @@ namespace Intranet.Domain.Entities.Transporte
         public ControleDiario ControleDiario { get; set; }
 
     }
+    
+    // TODO: Verificar se utiliza esta classe
 
     public class ControleDiarioDiariaForaMunicipio
     {

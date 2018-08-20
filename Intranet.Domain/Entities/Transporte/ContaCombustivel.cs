@@ -10,6 +10,7 @@ namespace Intranet.Domain.Entities.Transporte
     {
         public ContaCombustivel()
         {
+            Setor = new Setor();
             Quota = new List<ContaCombustivelQuota>();
         }
 
@@ -26,6 +27,8 @@ namespace Intranet.Domain.Entities.Transporte
     {
         public ContaCombustivelQuota()
         {
+            TipoCombustivel = new TipoCombustivel();
+            ContaCombustivel = new ContaCombustivel();
             Movimentacao = new List<ContaCombustivelMovimentacao>();
         }
 

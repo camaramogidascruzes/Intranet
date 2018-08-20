@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CB75719B-24F8-47DD-8523-90E52D06FC73}</ProjectGuid>
+    <ProjectGuid>{707D5964-DCFA-4BFA-A329-36258BD13EE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Intranet.Data</RootNamespace>
@@ -49,30 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\BasicDbContext.cs" />
     <Compile Include="Context\CerimonialContext.cs" />
     <Compile Include="Context\GeralContext.cs" />
     <Compile Include="Context\RedeSemFioContext.cs" />
-    <Compile Include="EntityConfiguration\DadosAlteracaoRegistroConfiguration.cs" />
-    <Compile Include="EntityConfiguration\DadosCriacaoRegistroConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\CargoConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\EmpresaConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\FuncionarioConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\GrupoConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\ParlamentarConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\PatrimonioConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\SetorConfiguration.cs" />
-    <Compile Include="EntityConfiguration\Geral\UsuarioConfiguration.cs" />
-    <Compile Include="EntityConfiguration\InformacaoDocumentoConfiguration.cs" />
-    <Compile Include="EntityConfiguration\InformacaoEnderecoConfiguration.cs" />
-    <Compile Include="EntityConfiguration\InformacaoTelefoneConfiguration.cs" />
-    <Compile Include="EntityConfiguration\RedeSemFio\CategoriaUsuarioRedeSemFioConfiguration.cs" />
+    <Compile Include="Context\PortariaContext.cs" />
+    <Compile Include="Context\TransporteContext.cs" />
+    <Compile Include="EntityConfigurations\Cerimonial\AutoridadeConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Cerimonial\AutoridadeGrupoCerimonialConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Cerimonial\GrupoCerimonialConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Cerimonial\OrgaoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Cerimonial\TratamentoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\DadosAlteracaoRegistroConfiguration.cs" />
+    <Compile Include="EntityConfigurations\DadosCriacaoRegistroConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\CargoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\EmpresaConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\FuncionarioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\GrupoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\ParlamentarConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\PatrimonioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\SetorConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Geral\UsuarioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\InformacaoDocumentoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\InformacaoEnderecoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\InformacaoTelefoneConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Portaria\LocalDestinoConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Portaria\RegistroEntradaConfiguration.cs" />
+    <Compile Include="EntityConfigurations\RedeSemFio\CategoriaUsuarioRedeSemFioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\RedeSemFio\CodigoAcessoRedeSemFioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\RedeSemFio\UsuarioRedeSemFioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\ContaCombustivelConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\ContratoSeguroConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\ControleDiarioConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\ManutencaoOSConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\MotoristaConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\TipoCombustivelConfiguration.cs" />
+    <Compile Include="EntityConfigurations\Transporte\VeiculoConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\RepositoryBase.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intranet.Domain\Intranet.Domain.csproj">
@@ -80,6 +92,11 @@
       <Name>Intranet.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -3,7 +3,7 @@ using Intranet.Domain.Entities;
 
 namespace Intranet.Data.EntityConfiguration
 {
-    class DadosAlteracaoRegistroConfiguration : ComplexTypeConfiguration<DadosAlteracaoRegistro>
+    public class DadosAlteracaoRegistroConfiguration : ComplexTypeConfiguration<DadosAlteracaoRegistro>
     {
         public DadosAlteracaoRegistroConfiguration()
         {
