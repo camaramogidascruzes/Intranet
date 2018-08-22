@@ -6,13 +6,12 @@ using Intranet.Data.EntityConfigurations.RedeSemFio;
 using Intranet.Domain.Entities;
 using Intranet.Domain.Entities.Geral;
 using Intranet.Domain.Entities.RedeSemFio;
-using GrupoConfiguration = Intranet.Data.EntityConfiguration.Geral.GrupoConfiguration;
 
 namespace Intranet.Data.Context
 {
     public class GeralContext : DbContext
     {
-        public GeralContext() : base("intranet-database")
+        public GeralContext() : base("name=intranetdatabase")
         {
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;

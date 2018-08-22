@@ -30,6 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.4.3.0\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,8 +52,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Bootstrap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intranet.Application\Intranet.Application.csproj">
+      <Project>{267b375d-936c-4703-ba75-f6da34aa8d27}</Project>
+      <Name>Intranet.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intranet.Data\Intranet.Data.csproj">
+      <Project>{707d5964-dcfa-4bfa-a329-36258bd13ee2}</Project>
+      <Name>Intranet.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intranet.Domain\Intranet.Domain.csproj">
+      <Project>{001a89f7-a824-43d5-8025-f4f985151f3c}</Project>
+      <Name>Intranet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intranet.Infra.Identity\Intranet.Infra.Identity.csproj">
+      <Project>{f4463ce9-3ee2-40ec-9c29-7cabf52c263e}</Project>
+      <Name>Intranet.Infra.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intranet.ServicosExternos.PaperCut\Intranet.ServicosExternos.PaperCut.csproj">
+      <Project>{6507f703-ccf3-40f7-b6b8-06862e80da3a}</Project>
+      <Name>Intranet.ServicosExternos.PaperCut</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Intranet.ServicosExternos.Unifi\Intranet.ServicosExternos.Unifi.csproj">
+      <Project>{eaa0dbb7-b80a-4fb3-98f6-f2c6229a5166}</Project>
+      <Name>Intranet.ServicosExternos.Unifi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

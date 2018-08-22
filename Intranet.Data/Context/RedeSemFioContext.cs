@@ -10,14 +10,14 @@ namespace Intranet.Data.Context
 {
     public class RedeSemfioContext : DbContext
     {
-        public RedeSemfioContext() : base("intranet-database")
+        public RedeSemfioContext() : base("name=intranetdatabase")
         {
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
             this.Configuration.ValidateOnSaveEnabled = false;
         }
 
-        public DbSet<CategoriaUsuarioRedeSemFio> CetgoriasUsuarioRedeSemFio { get; set; }
+        public DbSet<CategoriaUsuarioRedeSemFio> CategoriasUsuarioRedeSemFio { get; set; }
         public DbSet<CodigoAcessoRedeSemFio> CodigosAcessoRedeSemFio { get; set; }
         public DbSet<UsuarioRedeSemFio> UsuariosRedeSemFio { get; set; }
 
@@ -51,7 +51,6 @@ namespace Intranet.Data.Context
             modelBuilder.Configurations.Add(new FuncionarioContatoConfiguration());
             modelBuilder.Configurations.Add(new OcupacaoConfiguration());
             modelBuilder.Configurations.Add(new GrupoConfiguration());
-            modelBuilder.Configurations.Add(new CategoriaUsuarioRedeSemFioConfiguration());
             modelBuilder.Configurations.Add(new ParlamentarConfiguration());
             modelBuilder.Configurations.Add(new PatrimonioConfiguration());
             modelBuilder.Configurations.Add(new SetorConfiguration());

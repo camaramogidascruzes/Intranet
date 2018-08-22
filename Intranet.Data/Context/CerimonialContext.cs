@@ -9,7 +9,7 @@ namespace Intranet.Data.Context
 {
     public class CerimonialContext : DbContext
     {
-        public CerimonialContext() : base("intranet-database")
+        public CerimonialContext() : base("name=intranetdatabase")
         {
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;

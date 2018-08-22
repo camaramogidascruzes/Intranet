@@ -50,6 +50,7 @@
     <Compile Include="Entities\CriacaoBasicEntity.cs" />
     <Compile Include="Entities\DadosAlteracaoRegistro.cs" />
     <Compile Include="Entities\DadosCriacaoRegistro.cs" />
+    <Compile Include="Entities\Enum\PermissaoCatalogoTelefonicoEnum.cs" />
     <Compile Include="Entities\Geral\Cargo.cs" />
     <Compile Include="Entities\Geral\Empresa.cs" />
     <Compile Include="Entities\Geral\Funcionario.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Entities\RedeSemFio\CategoriaUsuarioRedeSemFio.cs" />
     <Compile Include="Entities\RedeSemFio\CodigoAcessoRedeSemFio.cs" />
     <Compile Include="Entities\RedeSemFio\UsuarioRedeSemFio.cs" />
+    <Compile Include="Entities\Telefonia\CatalogoTelefonico.cs" />
     <Compile Include="Entities\Transporte\ContaCombustivel.cs" />
     <Compile Include="Entities\Transporte\ContratoSeguro.cs" />
     <Compile Include="Entities\Transporte\ControleDiario.cs" />
