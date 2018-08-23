@@ -41,8 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\Geral\ISetorAppService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IAppServiceBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IAppServiceBaseViewModel.cs" />
     <Compile Include="Services\Geral\SetorAppService.cs" />
   </ItemGroup>
   <ItemGroup>

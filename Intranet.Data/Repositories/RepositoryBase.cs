@@ -5,12 +5,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Intranet.Domain.Entities;
 
 namespace Intranet.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : BasicEntity
     {
-        private DbContext _context;
+        private readonly DbContext _context;
         private DbSet<TEntity> _set;
 
         public RepositoryBase(DbContext context)
@@ -25,7 +26,7 @@ namespace Intranet.Data.Repositories
 
         public async Task<List<TEntity>> Ler(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, string includeProperties = "")
         {
-            IQueryable<TEntity> query = Set;
+            IQueryable<TEntity> query = Set.AsNoTracking();
 
             if (filter != null)
             {
@@ -48,34 +49,57 @@ namespace Intranet.Data.Repositories
             }
         }
 
-        public async Task<List<TEntity>> LerTodosPagina(int numeroPagina, int itensPorPagina)
+        public async Task<List<TEntity>> LerTodosPagina(int numeroPagina, int itensPorPagina, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
         {
-            return await Set.Skip((numeroPagina - 1) * itensPorPagina).Take(itensPorPagina).ToListAsync<TEntity>();
+            if (orderBy != null)
+            {
+                return await orderBy(Set.Skip((numeroPagina - 1) * itensPorPagina).Take(itensPorPagina)).AsNoTracking().ToListAsync<TEntity>();
+                
+            }
+            else
+            {
+                return await Set.Skip((numeroPagina - 1) * itensPorPagina).Take(itensPorPagina).AsNoTracking().ToListAsync<TEntity>();
+            }
+            
         }
 
         public async Task<TEntity> LerPorID(int id)
         {
-            return await Set.FindAsync(id);
+            return await Set.AsNoTracking().SingleOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task<TEntity> Novo(TEntity entity)
+        public TEntity Novo(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            Set.Add(entity);
+            return entity;
         }
 
-        public async Task<TEntity> Alterar(TEntity entity)
+        public TEntity Alterar(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            Set.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            return entity;
         }
 
-        public async Task Excluir(TEntity entity)
+        public void Excluir(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            if (_context.Entry(entity).State == EntityState.Detached)
+            {
+                Set.Attach(entity);
+            }
+
+            Set.Remove(entity);
         }
 
-        public async Task Excluir(int id)
+        public async void Excluir(int id)
         {
-            throw new System.NotImplementedException();
+            var entity = await this.LerPorID(id);
+            this.Excluir(entity);
+        }
+
+        public Task Salvar()
+        {
+            return _context.SaveChangesAsync();
         }
 
         #region IDisposable Support

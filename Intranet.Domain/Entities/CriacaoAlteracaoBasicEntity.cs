@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Intranet.Domain.Entities
 {
     public class CriacaoAlteracaoBasicEntity : BasicEntity
@@ -9,7 +11,7 @@ namespace Intranet.Domain.Entities
             DadosAlteracaoRegistro = new DadosAlteracaoRegistro();
             Excluido = false;
         }
-
+        
         public DadosCriacaoRegistro DadosCriacaoRegistro { get; set; }
         public DadosAlteracaoRegistro DadosAlteracaoRegistro { get; set; }
         public bool Excluido { get; set; }

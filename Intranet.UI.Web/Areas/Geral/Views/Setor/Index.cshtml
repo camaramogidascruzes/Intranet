@@ -1,7 +1,25 @@
-﻿
+﻿@using Intranet.Domain.ViewModels.Geral
+@using Kendo.Mvc.UI
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Setores";
 }
 
-<h2>Setores</h2>
+
+
+@(Html.Kendo().Grid<SetorViewModel>()    
+      .Name("SetorGrid")
+      .Columns(columns => {
+                              columns.Bound(s => s.Id);
+                              columns.Bound(s => s.Nome);
+      })
+      .Pageable()
+      .Scrollable()
+      .HtmlAttributes(new { style = "height:550px;" })
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .PageSize(20)
+          .Read(read => read.Action("LerTodos", @"Setor"))
+      )
+)
 
