@@ -10,7 +10,6 @@ using Intranet.Data.EntityConfiguration.Telefonia;
 using Intranet.Data.EntityConfigurations.Cerimonial;
 using Intranet.Data.EntityConfigurations.RedeSemFio;
 using Intranet.Data.EntityConfigurations.Transporte;
-using Intranet.Domain.Entities;
 using Intranet.Domain.Entities.Cerimonial;
 using Intranet.Domain.Entities.Geral;
 using Intranet.Domain.Entities.Portaria;
@@ -30,48 +29,50 @@ namespace Intranet.Data.Context
         }
 
         /* Geral */
-        public DbSet<Cargo> Cargos { get; set; }
-        public DbSet<Empresa> Empresas { get; set; }
-        public DbSet<EmpresaContato> EmpresaContatos { get; set; }
-        public DbSet<EmpresasTipos> EmpresasTipos { get; set; }
-        public DbSet<TipoEmpresa> TiposEmpresa { get; set; }
-        public DbSet<Funcionario> Funcionarios { get; set; }
-        public DbSet<FuncionarioContato> FuncionarioContatos { get; set; }
-        public DbSet<Ocupacao> Ocupacoes { get; set; }
-        public DbSet<Grupo> Grupos { get; set; }
-        public DbSet<Parlamentar> Parlamentares { get; set; }
-        public DbSet<Patrimonio> Patrimonios { get; set; }
-        public DbSet<Setor> Setores { get; set; }
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<UsuarioGrupo> UsuariosGrupos { get; set; }
+        public virtual DbSet<Cargo> Cargos { get; set; }
+        public virtual DbSet<Empresa> Empresas { get; set; }
+        public virtual DbSet<EmpresaContato> EmpresaContatos { get; set; }
+        public virtual DbSet<EmpresasTipos> EmpresasTipos { get; set; }
+        public virtual DbSet<TipoEmpresa> TiposEmpresa { get; set; }
+        public virtual DbSet<Funcionario> Funcionarios { get; set; }
+        public virtual DbSet<FuncionarioContato> FuncionarioContatos { get; set; }
+        public virtual DbSet<Ocupacao> Ocupacoes { get; set; }
+        public virtual DbSet<Grupo> Grupos { get; set; }
+        public virtual DbSet<Parlamentar> Parlamentares { get; set; }
+        public virtual DbSet<Patrimonio> Patrimonios { get; set; }
+        public virtual DbSet<Setor> Setores { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<UsuarioGrupo> UsuariosGrupos { get; set; }
         /* Cerimonial */
-        public DbSet<Autoridade> Autoridades { get; set; }
-        public DbSet<AutoridadeGrupoCerimonial> AutoridadesGruposCeronial { get; set; }
-        public DbSet<GrupoCerimonial> GruposCerimonial { get; set; }
-        public DbSet<Orgao> Orgaos { get; set; }
-        public DbSet<Tratamento> Tratamentos { get; set; }
+        public virtual DbSet<Autoridade> Autoridades { get; set; }
+        public virtual DbSet<AutoridadeGrupoCerimonial> AutoridadesGruposCeronial { get; set; }
+        public virtual DbSet<GrupoCerimonial> GruposCerimonial { get; set; }
+        public virtual DbSet<Orgao> Orgaos { get; set; }
+        public virtual DbSet<Tratamento> Tratamentos { get; set; }
         /* Portaria */
-        public DbSet<LocalDestino> LocaisDestino { get; set; }
-        public DbSet<RegistroEntrada> RegistrosEntrada { get; set; }
+        public virtual DbSet<LocalDestino> LocaisDestino { get; set; }
+        public virtual DbSet<RegistroEntrada> RegistrosEntrada { get; set; }
         /* Rede Sem Fio */
-        public DbSet<CategoriaUsuarioRedeSemFio> CategoriasUsuarioRedeSemFio { get; set; }
-        public DbSet<CodigoAcessoRedeSemFio> CodigosAcessoRedeSemFio { get; set; }
-        public DbSet<UsuarioRedeSemFio> UsuariosRedeSemFio { get; set; }
+        public virtual DbSet<CategoriaUsuarioRedeSemFio> CategoriasUsuarioRedeSemFio { get; set; }
+        public virtual DbSet<CodigoAcessoRedeSemFio> CodigosAcessoRedeSemFio { get; set; }
+        public virtual DbSet<UsuarioRedeSemFio> UsuariosRedeSemFio { get; set; }
         /* Telefonia */
-        public DbSet<CatalogoTelefonico> Catalogos { get; set; }
-        public DbSet<ItensCatalogoTelefonico> ItensCatalogos { get; set; }
+        public virtual DbSet<CatalogoTelefonico> Catalogos { get; set; }
+        public virtual DbSet<ItensCatalogoTelefonico> ItensCatalogos { get; set; }
         /* TRansporte */
-        public DbSet<ContaCombustivel> ContasCombustivels { get; set; }
-        public DbSet<ContratoSeguro> ContratosSeguro { get; set; }
-        public DbSet<ControleDiario> ControlesDiarios { get; set; }
-        public DbSet<ManutencaoOS> Manutencoes { get; set; }
-        public DbSet<Motorista> Motoristas { get; set; }
-        public DbSet<TipoCombustivel> TiposCombustivel { get; set; }
-        public DbSet<Veiculo> Veiculos { get; set; }
+        public virtual DbSet<ContaCombustivel> ContasCombustivels { get; set; }
+        public virtual DbSet<ContratoSeguro> ContratosSeguro { get; set; }
+        public virtual DbSet<ControleDiario> ControlesDiarios { get; set; }
+        public virtual DbSet<ManutencaoOS> Manutencoes { get; set; }
+        public virtual DbSet<Motorista> Motoristas { get; set; }
+        public virtual DbSet<TipoCombustivel> TiposCombustivel { get; set; }
+        public virtual DbSet<Veiculo> Veiculos { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("intranet");
+            
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
@@ -83,12 +84,6 @@ namespace Intranet.Data.Context
             modelBuilder.Configurations.Add(new InformacaoDocumentoConfiguration());
             modelBuilder.Configurations.Add(new InformacaoTelefoneConfiguration());
 
-
-            modelBuilder.ComplexType<DadosAlteracaoRegistro>();
-            modelBuilder.ComplexType<DadosCriacaoRegistro>();
-            modelBuilder.ComplexType<InformacaoEndereco>();
-            modelBuilder.ComplexType<InformacaoDocumento>();
-            modelBuilder.ComplexType<InformacaoTelefone>();
             /* Cerimonial */
             modelBuilder.Configurations.Add(new AutoridadeConfiguration());
             modelBuilder.Configurations.Add(new AutoridadeGrupoCerimonialConfiguration());

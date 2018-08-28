@@ -100,7 +100,7 @@ namespace Intranet.Application.Services.Geral
 
         public Setor Alterar(SetorViewModel entity, string usuario)
         {
-           
+            throw new NotImplementedException();
         }
 
         public void Excluir(int id)

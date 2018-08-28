@@ -46,7 +46,7 @@ namespace Intranet.UI.Web.Areas.Geral.Controllers
         {
             if (product != null && ModelState.IsValid)
             {
-                _setorservice.Alterar()
+                _setorservice.Alterar();
             }
 
             return Json(new[] { product }.ToDataSourceResult(request, ModelState));
@@ -57,7 +57,7 @@ namespace Intranet.UI.Web.Areas.Geral.Controllers
         {
             if (product != null)
             {
-                await _setorservice.Excluir()
+                await _setorservice.Excluir();
             }
 
             return Json(new[] { product }.ToDataSourceResult(request, ModelState));

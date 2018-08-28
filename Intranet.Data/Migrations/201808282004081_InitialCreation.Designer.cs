@@ -7,13 +7,13 @@ namespace Intranet.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PrimeiroDB : IMigrationMetadata
+    public sealed partial class InitialCreation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PrimeiroDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreation));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808221316048_PrimeiroDB"; }
+            get { return "201808282004081_InitialCreation"; }
         }
         
         string IMigrationMetadata.Source
