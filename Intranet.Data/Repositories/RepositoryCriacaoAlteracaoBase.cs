@@ -9,12 +9,12 @@ using Intranet.Domain.Interfaces.Repositories;
 
 namespace Intranet.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : BasicEntity
+    public class RepositoryCriacaoAlteracaoBase<TEntity> : IRepositoryCriacaoAlteracaoBase<TEntity> where TEntity : CriacaoAlteracaoBasicEntity
     {
         private readonly DbContext _context;
         private DbSet<TEntity> _set;
 
-        public RepositoryBase(DbContext context)
+        public RepositoryCriacaoAlteracaoBase(DbContext context)
         {
             this._context = context;
         }
@@ -68,33 +68,35 @@ namespace Intranet.Data.Repositories
             return await Set.AsNoTracking().SingleOrDefaultAsync(e => e.Id == id);
         }
 
-        public TEntity Novo(TEntity entity)
+        public TEntity Novo(TEntity entity, string usuario)
         {
+            entity.DadosCriacaoRegistro =
+                new DadosCriacaoRegistro() {DataCriacao = DateTime.Now, UsuarioCriacao = usuario};
+            entity.DadosAlteracaoRegistro =
+                new DadosAlteracaoRegistro() {DataUltimaAlteracao = DateTime.Now, UsuarioUltimaAlteracao = usuario};
             Set.Add(entity);
             return entity;
         }
 
-        public TEntity Alterar(TEntity entity)
+        public TEntity Alterar(TEntity entity, string usuario)
         {
+            entity.DadosAlteracaoRegistro =
+                new DadosAlteracaoRegistro() { DataUltimaAlteracao = DateTime.Now, UsuarioUltimaAlteracao = usuario };
             Set.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
             return entity;
         }
 
-        public void Excluir(TEntity entity)
+        public void Excluir(TEntity entity, string usuario)
         {
-            if (_context.Entry(entity).State == EntityState.Detached)
-            {
-                Set.Attach(entity);
-            }
-
-            Set.Remove(entity);
+            entity.Excluido = true;
+            this.Alterar(entity, usuario);
         }
 
-        public async void Excluir(int id)
+        public async void Excluir(int id, string usuario)
         {
             var entity = await this.LerPorID(id);
-            this.Excluir(entity);
+            this.Excluir(entity, usuario);
         }
 
         public Task Salvar()

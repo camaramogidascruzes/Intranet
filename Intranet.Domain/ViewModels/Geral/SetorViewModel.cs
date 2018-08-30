@@ -27,6 +27,7 @@ namespace Intranet.Domain.ViewModels.Geral
         }
 
         [Required]
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
 
         public static SetorViewModel SetorToViewModel(Setor setor)
